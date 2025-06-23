@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const step1 = document.getElementById('step-1');
     const step2 = document.getElementById('step-2');
     const partnerBtn = document.getElementById('partner-btn');
+    const qaBtn = document.getElementById('qa-btn')
     const backToStep1 = document.getElementById('back-to-step1');
     const progressFill = document.getElementById('progress-fill');
     const progressPercentage = document.getElementById('progress-percentage');
@@ -64,18 +65,24 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkStepCompletion() {
         if (doc1Downloaded && doc2Downloaded) {
             // Update progress
-            progressFill.style.width = '50%';
-            progressPercentage.textContent = '50%';
+            progressFill.style.width = '33%';
+            progressPercentage.textContent = '33%';
             
             // Collapse step 1 and show step 2
             setTimeout(function() {
                 step1.classList.add('collapsed');
-                step2.classList.remove('hidden');
+                // step2.classList.remove('hidden');
                 setTimeout(function() {
-                    step2.classList.add('opacity-100', 'fade-in');
+                    // step2.classList.add('opacity-100', 'fade-in');
                     step2.scrollIntoView({ behavior: 'smooth' });
+                    partnerBtn.classList.add('bg-green-500', 'hover:bg-green-600');
                 }, 50);
             }, 500);
+            partnerBtn.classList.remove('bg-gray-200', 'text-gray-600');
+            partnerBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            partnerBtn.classList.remove('cursor-not-allowed')
+            partnerBtn.disabled = false;
+
         }
     }
     
@@ -85,24 +92,30 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simulate completion of step 2
         setTimeout(function() {
-            progressFill.style.width = '100%';
-            progressPercentage.textContent = '100%';
-            partnerBtn.innerHTML = '<span>Registration Complete</span><i class="fas fa-check ml-2"></i>';
+            progressFill.style.width = '66%';
+            progressPercentage.textContent = '66%';
+            partnerBtn.innerHTML = '<span>AGentV has opened!</span><i class="fas fa-check ml-2"></i>';
             partnerBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
             partnerBtn.classList.add('bg-gray-200', 'text-gray-600');
             partnerBtn.disabled = true;
-        }, 2000);
+            step2.classList.add('collapsed')
+            
+        }, 500);
+        qaBtn.classList.remove('bg-gray-200', 'text-gray-600');
+        qaBtn.classList.add('bg-indigo-500', 'hover:bg-indigo-600');
+        qaBtn.classList.remove('cursor-not-allowed')
+        qaBtn.disabled = false;
     });
     
     // Back to step 1 button
-    backToStep1.addEventListener('click', function() {
-        step1.classList.remove('collapsed');
-        step2.classList.remove('opacity-100');
-        setTimeout(function() {
-            step2.classList.add('hidden');
-            step1.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    });
+    // backToStep1.addEventListener('click', function() {
+    //     step1.classList.remove('collapsed');
+    //     step2.classList.remove('opacity-100');
+    //     setTimeout(function() {
+    //         // step2.classList.add('hidden');
+    //         step1.scrollIntoView({ behavior: 'smooth' });
+    //     }, 300);
+    // });
 
     // Make steps collapsible/expandable
     const stepHeaders = document.querySelectorAll('.step h2');

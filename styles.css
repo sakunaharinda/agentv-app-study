@@ -4,7 +4,7 @@
 .collapsed {
     max-height: 80px;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 1s ease;
     position: relative;
 }
 .collapsed::after {
