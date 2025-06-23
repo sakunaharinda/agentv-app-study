@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGentV: Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="agentv_study.js"></script>
+    <!-- <style>
+        
+    </style> -->
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header with Logo and Project Name -->
+        <header class="text-center mb-12">
+            <div class="flex justify-center mb-4">
+                <img src="images/logo.png" alt="Project Nexus Logo" class="w-20 h-20 rounded-full shadow-md">
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">AGentV</h1>
+            <p class="text-lightgrey-600 font-medium">Usability Study to evaluate AGentV</p>
+        </header>
+
+        <!-- Project Description -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Study Overview</h2>
+            <p class="text-gray-600 leading-relaxed">
+                There are several key steps to this study. </p>
+                <br/>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Think-aloud Study [25 minutes]</h3>
+            <p class="text-gray-600 leading-relaxed"> 
+                First, you will be using a new semi-automated access control policy generation system, AGentV to generate access control policies from a organization's high-level requirement specification document, by thinking aloud. <strong>[15 minutes]</strong>
+            </p>
+            <br/>
+            <p>Then you will need to answer a few questions based on the generated access control policies and make necessary changes (e.g., add new policies, remove existing policies, etc.) to the policies when needed. <strong>[10 minutes]</strong></p>
+            <div class="mt-4">
+                <p class="font-bold text-gray-700 mb-2">During the think-aloud study, we expect you to,</p>
+                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                    <li><strong>Perform the given task</strong>: Perform the given task using the provided input documents according to the given scenario within 25 minutes.</li>
+                    <li><strong>Speak continuously</strong>: As you use AGentV to perform the given task, describe what you’re doing, thinking, and why.</li>
+                    <li><strong>Share openly</strong>: If you’re confused, hesitate, or find something surprising, say it out loud!Share openly: If you’re confused, hesitate, or find something surprising, say it out loud!</li>
+                    <li><strong>Explain your intentions</strong>: E.g., “I clicked this because I thought it would let me translate a requirement into an access control policy”</li>
+                    
+                </ul>
+            </div>
+            <br/>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Fill out the Satisfaction Survey [5 minutes]</h3>
+            <p class="text-gray-600 leading-relaxed"> 
+                After performing the think-aloud study, you will be provided with a survey (System Usability Scale) to rate AGentV from 1 (Strongly disagree) to 5 (Strongly agree) according to 10 statements.
+            </p>
+            <br/>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Interview [30-45 minutes]</h3>
+            <p class="text-gray-600 leading-relaxed"> 
+                Finally you will be participating in a semi-structured interview where you will get a chance to provide feedback on the system, AGentV as well as the automated access control policy generation.
+            </p>
+
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Introduction to AGentV
+
+            </h2>
+            <div class="aspect-w-16 aspect-h-9">
+                <!-- <iframe width="895" height="499" src="https://www.youtube.com/embed/-ohSH2RATqQ" title="AGentV [Introduction]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed/-ohSH2RATqQ" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="bg-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Scenario</h2>
+            <p class="text-gray-600 leading-relaxed">
+                You are the system administrator for HealthStar General Hospital, a medium-sized urban hospital with around 300 employees. The hospital recently transitioned to a new digital health records system. Your task is to create access control policies for this system.</p>
+
+                <br/>
+                <p class="text-gray-600 leading-relaxed">
+You've been provided with the, 
+                </p>
+<ul class="list-disc pl-5 text-gray-600 space-y-1">
+<li>roles, resources, and actions defined in the hospital as organization hierarchies in YAML format (see hierarchies.yaml). </li>
+<li>Also, the high-level requirement specification document of the hospital that explains who can access what information under what conditions in markdown format (see HealthStar.md). </li>
+</ul>
+<br/>
+<p>
+Your goal is to translate the access control requirements in the provided high-level requirement specification document into formal access control policies using AGentV.</p> 
+
+<p><strong>You have 15 minutes to complete the task.</strong></p>
+<br/>
+<p>
+<strong>IMPORTANT</strong>: Assume that the hospital's authorization system, AGentV's PAP (Policy Administration Point), and PDP (Policy Decision Point) are based on XACML and operate under the default deny principle. They use the deny-overrides policy, combining algorithm, and first-applicable rule combining algorithm to resolve conflicts.
+            </p>
+        </section>
+
+        <!-- Task Description -->
+        <!-- <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Your Task</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Complete the Project Nexus onboarding process by:
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                <li>Downloading and reviewing the required documents</li>
+                <li>Registering with our partner service</li>
+                <li>Configuring your personal settings</li>
+            </ul>
+        </section> -->
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Progress</span>
+                <span id="progress-percentage" class="text-sm font-medium text-blue-600">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Steps Container -->
+        <div id="steps-container" class="space-y-8">
+            <!-- Step 1 -->
+            <div id="step-1" class="step bg-white rounded-lg shadow-md p-6 relative">
+                <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 1</div>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Downlod the Documents</h2>
+                
+                <div class="mb-6">
+                    <p class="text-gray-600 leading-relaxed">
+                        Before starting the policy generation, you are required to download two crucial documents:
+                    </p>
+                    <br/>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Hospital's high-level requirement specification document that mentions the hospital's access requirements (Hospital.md).</li>
+                        <li>Organization hierarchies of the hospital that are used to provide the context for policy generation (Hierarchies.yaml).</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Download both documents below. Once downloaded, they will be automatically checked off. After both documents 
+                        are downloaded, you'll be able to proceed to the next step.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <button id="doc1-btn" class="download-btn flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg flex items-center justify-between transition-colors">
+                                <span>Hospital.md</span>
+                                <i class="fas fa-download ml-2"></i>
+                            </button>
+                            <div id="doc1-check" class="ml-4 hidden">
+                                <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <button id="doc2-btn" class="download-btn flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg flex items-center justify-between transition-colors">
+                                <span>Hierarchies.yaml</span>
+                                <i class="fas fa-download ml-2"></i>
+                            </button>
+                            <div id="doc2-check" class="ml-4 hidden">
+                                <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 (initially hidden) -->
+            <div id="step-2" class="step hidden opacity-0 bg-white rounded-lg shadow-md p-6 relative">
+                <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 2</div>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Partner Registration</h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-2">Introduction</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Project Nexus integrates with several partner services to enhance your experience. The next step requires 
+                        you to register with our primary partner service which provides additional analytics and reporting features.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-2">Instruction</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Click the button below to open the partner registration page in a new tab. Complete the registration process 
+                        on their website, then return here to continue with the final setup steps.
+                    </p>
+                    
+                    <button id="partner-btn" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
+                        <span>Register with Partner Service</span>
+                        <i class="fas fa-external-link-alt ml-2"></i>
+                    </button>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button id="back-to-step1" class="text-blue-500 hover:text-blue-700 font-medium flex items-center justify-center mx-auto">
+                        <i class="fas fa-arrow-up mr-2"></i>
+                        Back to Step 1
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        
+    </script> -->
+</body>
+</html>
