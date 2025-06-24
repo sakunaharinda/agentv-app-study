@@ -116,16 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
         }, 500);
     });
-    
-    // Back to step 1 button
-    // backToStep1.addEventListener('click', function() {
-    //     step1.classList.remove('collapsed');
-    //     step2.classList.remove('opacity-100');
-    //     setTimeout(function() {
-    //         // step2.classList.add('hidden');
-    //         step1.scrollIntoView({ behavior: 'smooth' });
-    //     }, 300);
-    // });
 
     // Make steps collapsible/expandable
     const stepHeaders = document.querySelectorAll('.step h2');
@@ -141,16 +131,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // const sectiionHeaders = document.querySelectorAll('.col_sect h2');
-    // sectiionHeaders.forEach(header => {
-    //     header.addEventListener('click', function() {
-    //         const section = this.closest('section');
-    //         if (section.classList.contains('collapsed')) {
-    //             section.classList.remove('collapsed');
-    //         } else if (!section.classList.contains('hidden')) {
-    //             section.classList.add('collapsed');
-    //         }
-    //         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    //     });
-    // });
 });
