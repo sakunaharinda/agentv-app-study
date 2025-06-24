@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     qaBtn.addEventListener('click', function() {
-        window.open('http://agentv.naoinstitute.cloud.edu.au:8506/', '_blank');
+        window.open('https://auckland.au1.qualtrics.com/jfe/form/SV_b8AhSdVffEOdSIe', '_blank');
         
         // Simulate completion of step 2
         setTimeout(function() {
