@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const step1 = document.getElementById('step-1');
     const step2 = document.getElementById('step-2');
     const step3 = document.getElementById('step-3');
+    const step4 = document.getElementById('step-4');
     const partnerBtn = document.getElementById('partner-btn');
-    const qaBtn = document.getElementById('qa-btn')
+    const qaBtn = document.getElementById('qa-btn');
+    const satisBtn = document.getElementById('satis-btn');
     const backToStep1 = document.getElementById('back-to-step1');
     const progressFill = document.getElementById('progress-fill');
     const progressPercentage = document.getElementById('progress-percentage');
@@ -23,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Create download link and trigger click
             const link = document.createElement('a');
-            link.href = 'data/Hospital.md';
-            link.download = 'Hospital.md';
+            link.href = 'data/Requirements.md';
+            link.download = 'Requirements.md';
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
@@ -66,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkStepCompletion() {
         if (doc1Downloaded && doc2Downloaded) {
             // Update progress
-            progressFill.style.width = '33%';
-            progressPercentage.textContent = '33%';
+            progressFill.style.width = '25%';
+            progressPercentage.textContent = '25%';
             
             // Collapse step 1 and show step 2
             setTimeout(function() {
@@ -93,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simulate completion of step 2
         setTimeout(function() {
-            progressFill.style.width = '66%';
-            progressPercentage.textContent = '66%';
+            progressFill.style.width = '50%';
+            progressPercentage.textContent = '50%';
             step2.classList.add('collapsed')
             
         }, 500);
@@ -109,10 +111,27 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simulate completion of step 2
         setTimeout(function() {
+            progressFill.style.width = '75%';
+            progressPercentage.textContent = '75%';
+            
+            step3.classList.add('collapsed')
+            
+        }, 500);
+        satisBtn.classList.remove('bg-gray-200', 'text-gray-600');
+        satisBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+        satisBtn.classList.remove('cursor-not-allowed')
+        satisBtn.disabled = false;
+    });
+
+    satisBtn.addEventListener('click', function() {
+        window.open('https://auckland.au1.qualtrics.com/jfe/form/SV_6DprC7G8FqPH4HA', '_blank');
+        
+        // Simulate completion of step 2
+        setTimeout(function() {
             progressFill.style.width = '100%';
             progressPercentage.textContent = '100%';
             
-            step3.classList.add('collapsed')
+            step4.classList.add('collapsed')
             
         }, 500);
     });

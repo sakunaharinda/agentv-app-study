@@ -31,15 +31,15 @@
                 <br/>
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Think-aloud Study [25 minutes]</h3>
             <p class="text-gray-600 leading-relaxed"> 
-                First, you will be using a new semi-automated access control policy generation system, AGentV to generate access control policies from a organization's high-level requirement specification document, by thinking aloud. <strong>[15 minutes]</strong>
+                First, you will be using a new semi-automated access control policy generation system, AGentV to generate access control policies from a organization's high-level requirement specification document, by thinking aloud. <strong>[15 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-2">Go to the task</a>]
             </p>
             <br/>
-            <p>Then you will need to answer a few questions based on the generated access control policies and make necessary changes (e.g., add new policies, remove existing policies, etc.) to the policies when needed. <strong>[10 minutes]</strong></p>
+            <p>Then you will need to answer a few questions based on the generated access control policies and make necessary changes (e.g., add new policies, remove existing policies, etc.) to the policies when needed. <strong>[10 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-3">Go to the task</a>]</p>
             <div class="mt-4">
                 <p class="font-bold text-gray-700 mb-2">During the think-aloud study, we expect you to,</p>
                 <ul class="list-disc pl-5 text-gray-600 space-y-1">
                     <li><strong>Perform the given task</strong>: Perform the given task using the provided input documents according to the given scenario within 25 minutes.</li>
-                    <li><strong>Speak continuously</strong>: As you use AGentV to perform the given task, describe what you’re doing, thinking, and why.</li>
+                    <li><strong>Speak</strong>: As you use AGentV to perform the given task, describe what you’re doing, thinking, and why.</li>
                     <li><strong>Share openly</strong>: If you’re confused, hesitate, or find something surprising, say it out loud!Share openly: If you’re confused, hesitate, or find something surprising, say it out loud!</li>
                     <li><strong>Explain your intentions</strong>: E.g., “I clicked this because I thought it would let me translate a requirement into an access control policy”</li>
                     
@@ -48,7 +48,7 @@
             <br/>
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Fill out the Satisfaction Survey [5 minutes]</h3>
             <p class="text-gray-600 leading-relaxed"> 
-                After performing the think-aloud study, you will be provided with a survey (System Usability Scale) to rate AGentV from 1 (Strongly disagree) to 5 (Strongly agree) according to 10 statements.
+                After performing the think-aloud study, you will be provided with a survey (System Usability Scale) to rate AGentV from 1 (Strongly disagree) to 5 (Strongly agree) according to 10 statements. [<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-4">Go to the task</a>]
             </p>
             <br/>
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Interview [30-45 minutes]</h3>
@@ -77,7 +77,7 @@
         <section class="bg-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Scenario</h2>
             <p class="text-gray-600 leading-relaxed">
-                You are the system administrator for HealthStar General Hospital, a medium-sized urban hospital with around 300 employees. The hospital recently transitioned to a new digital health records system. Your task is to create access control policies for this system.</p>
+                You are the system administrator for HealthStar General Hospital, a medium-sized urban hospital with around 300 employees. The hospital recently transitioned to a new digital health records system.</p>
 
                 <br/>
                 <p class="text-gray-600 leading-relaxed">
@@ -88,14 +88,14 @@ You've been provided with the,
 <li>Hospital's high-level requirement specification document that explains who can access what information under what conditions in markdown format. </li>
 </ul>
 <br/>
-<h3 class="text-xl font-semibold text-gray-800 mb-4">Task</h3>
+<!-- <h3 class="text-xl font-semibold text-gray-800 mb-4">Task</h3> -->
 <p>
 Your goal is to translate the access control requirements in the provided high-level requirement specification document into formal access control policies using AGentV.</p> 
 
 <p><strong>You have 15 minutes to complete the task.</strong></p>
 <br/>
 <p>
-<strong>IMPORTANT</strong>: Assume that the hospital's authorization system, AGentV's PAP (Policy Administration Point), and PDP (Policy Decision Point) are based on XACML and operate under the default deny principle. They use the deny-overrides policy, combining algorithm, and first-applicable rule combining algorithm to resolve conflicts.
+<strong>IMPORTANT</strong>: Assume that the hospital's authorization system, AGentV's policy database, and PDP (Policy Decision Point) are based on XACML and operate under the default deny principle. They use the deny-overrides policy, combining algorithm, and first-applicable rule combining algorithm to resolve conflicts.
             </p>
         </section>
 
@@ -123,7 +123,7 @@ Your goal is to translate the access control requirements in the provided high-l
                     </p>
                     <br/>
                     <ul class="list-disc pl-5 text-gray-600 space-y-1">
-                        <li><strong>High-level requirement specification document</strong> of the hospital that mentions the hospital's access requirements (Hospital.md).</li>
+                        <li><strong>High-level requirement specification document</strong> of the hospital that mentions the hospital's access requirements (Requirements.md).</li>
                         <li><strong>Organization hierarchies</strong> of the hospital that are used to provide the context for policy generation (Hierarchies.yaml).</li>
                     </ul>
                 </div>
@@ -137,7 +137,7 @@ Your goal is to translate the access control requirements in the provided high-l
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <button id="doc1-btn" class="download-btn flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg flex items-center justify-between transition-colors">
-                                <span>Hospital.md</span>
+                                <span>Requirements.md</span>
                                 <i class="fas fa-download ml-2"></i>
                             </button>
                             <div id="doc1-check" class="ml-4 hidden">
@@ -191,6 +191,24 @@ Your goal is to translate the access control requirements in the provided high-l
                     </p>
                     
                     <button id="qa-btn" class="w-full bg-gray-200 text-gray-600 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors cursor-not-allowed">
+                        <span>Go to the Questionnaire</span>
+                        <i class="fas fa-external-link-alt ml-2"></i>
+                    </button>
+                </div>
+                
+            </div>
+            <div id="step-4" class="step bg-white rounded-lg shadow-md p-6 relative">
+                <div class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 4</div>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Fill out the Satisfaction Survey</h2>
+                
+                
+                <div class="mb-6">
+                    <!-- <h3 class="text-lg font-medium text-gray-700 mb-2">Instruction</h3> -->
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Once you completed the think-aloud study, please fill out the user satisfaction survey, where you can rate AGentV according to 10 criteria from Strongly Disagree (1) to Strongly Agree (5).
+                    </p>
+                    
+                    <button id="satis-btn" class="w-full bg-gray-200 text-gray-600 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors cursor-not-allowed">
                         <span>Go to the Questionnaire</span>
                         <i class="fas fa-external-link-alt ml-2"></i>
                     </button>
