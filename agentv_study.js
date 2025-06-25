@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Create download link and trigger click
             const link = document.createElement('a');
-            link.href = 'data/hierarchy.yaml';
+            link.href = 'data/Hierarchies.yaml';
             link.download = 'Hierarchies.yaml';
             link.style.display = 'none';
             document.body.appendChild(link);

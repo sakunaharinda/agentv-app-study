@@ -33,7 +33,8 @@ This document defines the high-level access control requirements for a hospital 
 
 ### Data Entry and Modification
 * LHCPs and DLHCPs can enter and modify medical records but cannot alter security credentials.
-* UAPs can update demographic data but not medical diagnoses.
+* HCPs are allowed to view patient demographic data.
+* UAP can update demographic data but not medical diagnoses.
 * Patients can edit their demographic information but not medical records.
 
 ### Record and Audit Management
