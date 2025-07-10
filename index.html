@@ -20,9 +20,60 @@
                 <img src="images/logo.png" alt="Project Nexus Logo" class="w-20 h-20 rounded-full shadow-md">
             </div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Usability Evaluation of an Automated Access Control Policy Generation System</h1>
-            <!-- <p class="text-lightgrey-600 font-medium">Usability Study to evaluate AGentV</p> -->
         </header>
 
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Sign-In
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Please enter your Prolific ID and click Sign In.
+            </p>
+            <form id="signin-form" class="space-y-4">
+                <div>
+                    <label for="prolificId" class="block text-gray-700 font-medium mb-2">Prolific ID</label>
+                    <input type="text" id="prolificId" name="prolificId" required 
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" 
+                           placeholder="Enter your Prolific ID">
+                </div>
+                <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
+                    <span id="btnText">Sign In</span>
+                    <span id="btnSpinner" class="hidden ml-2">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </form>
+        </section>
+        <div id="successNotification" class="hidden fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-xl flex items-center animate-slide-up">
+            <i class="fas fa-check-circle text-xl mr-3"></i>
+            <p class="font-semibold">Successfully signed in!</p>
+        </div>
+        
+        <div class="mb-8 hidden" id="linkPreviewSection">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <h3 class="font-semibold text-blue-800 mb-2">Your Study Link</h3>
+                <div class="bg-white p-3 rounded-lg break-all text-sm text-blue-600 font-mono" id="modifiedLinkPreview">
+                    &nbsp;
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Click the button below to proceed to the study</p>
+            </div>
+        </div>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Introduction to AGentV
+
+            </h2>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed/E8LMs6pmcyY" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        
+        
         <!-- Project Description -->
         <section class="bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Study Overview</h2>
@@ -31,10 +82,10 @@
                 <br/>
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Think-aloud Study [25 minutes]</h3>
             <p class="text-gray-600 leading-relaxed"> 
-                First, you will be using a new semi-automated access control policy generation system, AGentV to generate access control policies from a organization's high-level requirement specification document, by thinking aloud. <strong>[15 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-2">Go to the task</a>]
+                <strong>Task 1: </strong>First, you will be using a new semi-automated access control policy generation system, AGentV to generate access control policies from a organization's high-level requirement specification document, by thinking aloud. <strong>[10 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-2">Go to the task</a>]
             </p>
             <br/>
-            <p>Then you will need to answer a few questions based on the generated access control policies and make necessary changes (e.g., add new policies, remove existing policies, etc.) to the policies when needed. <strong>[10 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-3">Go to the task</a>]</p>
+            <p><strong>Task 2: </strong>Then you will need to answer a few questions based on the generated access control policies and make necessary changes (e.g., add new policies, remove existing policies, etc.) to the policies when needed. <strong>[15 minutes]</strong>[<a class="font-bold text-blue-500 hover:text-purple-500" href="#step-3">Go to the task</a>]</p>
             <div class="mt-4">
                 <p class="font-bold text-gray-700 mb-2">During the think-aloud study, we expect you to,</p>
                 <ul class="list-disc pl-5 text-gray-600 space-y-1">
@@ -58,20 +109,7 @@
 
         </section>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                Introduction to AGentV
-
-            </h2>
-            <div class="aspect-w-16 aspect-h-9">
-                <!-- <iframe width="887" height="499" src="https://www.youtube.com/embed/E8LMs6pmcyY" title="AGentV [Walkthrough]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed/E8LMs6pmcyY" 
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+        
 
         <!-- Scenario -->
         <section class="bg-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
@@ -92,7 +130,7 @@ You've been provided with the,
 <p>
 Your goal is to translate the access control requirements in the provided high-level requirement specification document into formal access control policies using AGentV.</p> 
 
-<p><strong>You have 15 minutes to complete the task.</strong></p>
+<p><strong>You have 10 minutes to complete the task.</strong></p>
 <br/>
 <p>
 <strong>IMPORTANT</strong>: Assume that the hospital's authorization system, AGentV's policy database, and PDP (Policy Decision Point) are based on XACML and operate under the default deny principle. They use the deny-overrides policy, combining algorithm, and first-applicable rule combining algorithm to resolve conflicts.
@@ -159,9 +197,9 @@ Your goal is to translate the access control requirements in the provided high-l
             </div>
 
             <!-- Step 2 (initially hidden) -->
-            <div id="step-2" class="step bg-white rounded-lg shadow-md p-6 relative">
+            <div id="step-2" class="step bg-white rounded-lg shadow-md p-6 relative collapsed">
                 <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 2</div>
-                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Access AGentV and Perform the task</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Visit AGentV and Perform the Task 1</h2>
                 
                 
                 <div class="mb-6">
@@ -179,9 +217,9 @@ Your goal is to translate the access control requirements in the provided high-l
                 </div>
                 
             </div>
-            <div id="step-3" class="step bg-white rounded-lg shadow-md p-6 relative">
+            <div id="step-3" class="step bg-white rounded-lg shadow-md p-6 relative collapsed">
                 <div class="absolute top-4 right-4 bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 3</div>
-                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Answer the Questions and Perform the Sub-tasks</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Perform the Task 2 and Answer the Questions</h2>
                 
                 
                 <div class="mb-6">
@@ -197,7 +235,7 @@ Your goal is to translate the access control requirements in the provided high-l
                 </div>
                 
             </div>
-            <div id="step-4" class="step bg-white rounded-lg shadow-md p-6 relative">
+            <div id="step-4" class="step bg-white rounded-lg shadow-md p-6 relative collapsed">
                 <div class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 4</div>
                 <h2 class="text-xl font-semibold text-gray-800 mb-4 cursor-pointer">Fill out the Satisfaction Survey</h2>
                 
