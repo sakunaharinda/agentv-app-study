@@ -3,7 +3,6 @@ subjects:
     - lhcp
     - mhp
     - dlhcp
-    - er personnel
     - uap
     - lt
   - administrator
@@ -45,7 +44,6 @@ resources:
       - lhcp
       - mhp
       - dlhcp
-      - er personnel
       - uap
       - lt
     - administrator
