@@ -38,6 +38,7 @@
                 </div>
                 <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
                     <span id="btnText">Sign In</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
                     <span id="btnSpinner" class="hidden ml-2">
                         <i class="fas fa-spinner fa-spin"></i>
                     </span>
@@ -49,17 +50,8 @@
             <p class="font-semibold">Successfully signed in!</p>
         </div>
         
-        <div class="mb-8 hidden" id="linkPreviewSection">
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                <h3 class="font-semibold text-blue-800 mb-2">Your Study Link</h3>
-                <div class="bg-white p-3 rounded-lg break-all text-sm text-blue-600 font-mono" id="modifiedLinkPreview">
-                    &nbsp;
-                </div>
-                <p class="text-xs text-gray-500 mt-2">Click the button below to proceed to the study</p>
-            </div>
-        </div>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <section id="section1" class="section-hidden bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">
                 Introduction to AGentV
 
@@ -75,7 +67,7 @@
         
         
         <!-- Project Description -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <section id="section2" class="section-hidden bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Study Overview</h2>
             <p class="text-gray-600 leading-relaxed">
                 There are several key steps to this study. </p>
@@ -112,7 +104,7 @@
         
 
         <!-- Scenario -->
-        <section class="bg-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
+        <section id="section3" class="section-hidden bg-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Scenario</h2>
             <p class="text-gray-600 leading-relaxed">
                 You are the system administrator for HealthStar General Hospital, a medium-sized urban hospital with around 300 employees. The hospital recently transitioned to a new digital health records system.</p>
@@ -138,7 +130,7 @@ Your goal is to translate the access control requirements in the provided high-l
         </section>
 
         <!-- Progress Bar -->
-        <div class="mb-8">
+        <div id="section4" class="section-hidden mb-8">
             <div class="flex justify-between items-center mb-2">
                 <span class="text-sm font-medium text-gray-700">Progress</span>
                 <span id="progress-percentage" class="text-sm font-medium text-blue-600">0%</span>
@@ -149,7 +141,7 @@ Your goal is to translate the access control requirements in the provided high-l
         </div>
 
         <!-- Steps Container -->
-        <div id="steps-container" class="space-y-8">
+        <div id="steps-container" class="section-hidden space-y-8">
             <!-- Step 1 -->
             <div id="step-1" class="step bg-white rounded-lg shadow-md p-6 relative">
                 <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Step 1</div>
