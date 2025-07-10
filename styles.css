@@ -47,6 +47,30 @@
 .fade-in {
     animation: fadeIn 0.5s ease-in;
 }
+.glow-on-hover:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+}
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+.animate-slide-up {
+    animation: slide-up 3s ease-in-out forwards;
+}
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
