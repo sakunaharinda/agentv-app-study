@@ -1,6 +1,21 @@
 .step {
     transition: all 0.3s ease;
 }
+
+.section-hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(20px);
+}
+
+.section-visible {
+    opacity: 1;
+    max-height: 1000px;
+    transform: translateY(0);
+}
+
 .collapsed {
     max-height: 80px;
     overflow: hidden;
