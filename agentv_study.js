@@ -13,9 +13,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToStep1 = document.getElementById('back-to-step1');
     const progressFill = document.getElementById('progress-fill');
     const progressPercentage = document.getElementById('progress-percentage');
+    const prolificIdInput = document.getElementById('prolificId');
+    const submitBtn = document.getElementById('submitBtn');
+
+    let prolific_pid = '';
+    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_b8AhSdVffEOdSIe?PROLIFIC_PID=';
+    let sus_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_6DprC7G8FqPH4HA?PROLIFIC_PID=';
     
     let doc1Downloaded = false;
     let doc2Downloaded = false;
+
+    document.getElementById('signin-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const prolificId = prolificIdInput.value.trim();
+        
+        // Generate the full URL with the Prolific ID as parameter
+        prolific_pid = encodeURIComponent(prolificId);
+        task_link = task_link + prolific_pid;
+        sus_link = sus_link + prolific_pid;
+        // Show and auto-hide success notification
+        const notification = document.getElementById('successNotification');
+        notification.classList.remove('hidden');
+        setTimeout(() => {
+            notification.classList.add('hidden');
+        }, 3000);
+        
+        // Disable form elements
+        
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        submitBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+        submitBtn.innerHTML = '<span>Signed In!</span>';
+        prolificIdInput.disabled = true;
+        prolificIdInput.classList.add('bg-gray-100', 'cursor-not-allowed');
+    });
     
     // Simulate document downloads
     doc1Btn.addEventListener('click', function() {
@@ -76,11 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 step1.classList.add('collapsed');
                 // step2.classList.remove('hidden');
                 setTimeout(function() {
+                    step2.classList.remove('collapsed');
                     // step2.classList.add('opacity-100', 'fade-in');
                     step2.scrollIntoView({ behavior: 'smooth' });
                     partnerBtn.classList.add('bg-green-500', 'hover:bg-green-600');
                 }, 50);
             }, 500);
+            step2.classList.remove('collapsed');
             partnerBtn.classList.remove('bg-gray-200', 'text-gray-600');
             partnerBtn.classList.add('bg-green-500', 'hover:bg-green-600');
             partnerBtn.classList.remove('cursor-not-allowed')
@@ -100,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             step2.classList.add('collapsed')
             
         }, 500);
+        step3.classList.remove('collapsed');
         qaBtn.classList.remove('bg-gray-200', 'text-gray-600');
         qaBtn.classList.add('bg-indigo-500', 'hover:bg-indigo-600');
         qaBtn.classList.remove('cursor-not-allowed')
@@ -107,7 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     qaBtn.addEventListener('click', function() {
-        window.open('https://auckland.au1.qualtrics.com/jfe/form/SV_b8AhSdVffEOdSIe', '_blank');
+
+
+
+        window.open(task_link, '_blank');
         
         // Simulate completion of step 2
         setTimeout(function() {
@@ -117,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             step3.classList.add('collapsed')
             
         }, 500);
+        step4.classList.remove('collapsed');
         satisBtn.classList.remove('bg-gray-200', 'text-gray-600');
         satisBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
         satisBtn.classList.remove('cursor-not-allowed')
@@ -124,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     satisBtn.addEventListener('click', function() {
-        window.open('https://auckland.au1.qualtrics.com/jfe/form/SV_6DprC7G8FqPH4HA', '_blank');
+        window.open(sus_link, '_blank');
         
         // Simulate completion of step 2
         setTimeout(function() {
@@ -148,6 +186,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             step.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+    });
+
+    prolificIdInput.addEventListener('focus', function() {
+        this.classList.add('ring-2', 'ring-blue-300');
+    });
+    
+    prolificIdInput.addEventListener('blur', function() {
+        this.classList.remove('ring-2', 'ring-blue-300');
     });
 
 });
