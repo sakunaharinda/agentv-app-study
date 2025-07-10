@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+    const section3 = document.getElementById('section3');
+    const section4 = document.getElementById('section4');
+
+    const stepsContainer = document.getElementById('steps-container');
+
     const doc1Btn = document.getElementById('doc1-btn');
     const doc2Btn = document.getElementById('doc2-btn');
     const doc1Check = document.getElementById('doc1-check');
@@ -17,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
 
     let prolific_pid = '';
-    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_2sF5L9WfDpSoeHA?PROLIFIC_PID=';
+    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_b8AhSdVffEOdSIe?PROLIFIC_PID=';
     let sus_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_6DprC7G8FqPH4HA?PROLIFIC_PID=';
     
     let doc1Downloaded = false;
@@ -43,9 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
         submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
         submitBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
-        submitBtn.innerHTML = '<span>Signed In!</span>';
+        submitBtn.innerHTML = '<span>Signed In!</span> <i class="fas fa-check ml-2"></i>';
         prolificIdInput.disabled = true;
         prolificIdInput.classList.add('bg-gray-100', 'cursor-not-allowed');
+
+        section1.classList.remove('section-hidden');
+        section1.classList.add('section-visible');
+
+        section2.classList.remove('section-hidden');
+        section2.classList.add('section-visible');
+
+        section3.classList.remove('section-hidden');
+        section3.classList.add('section-visible');
+
+        section4.classList.remove('section-hidden');
+        section4.classList.add('section-visible');
+
+        stepsContainer.classList.remove('section-hidden');
+        stepsContainer.classList.add('section-visible');
     });
     
     // Simulate document downloads
