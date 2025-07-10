@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
 
     let prolific_pid = '';
-    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_b8AhSdVffEOdSIe?PROLIFIC_PID=';
+    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_2sF5L9WfDpSoeHA?PROLIFIC_PID=';
     let sus_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_6DprC7G8FqPH4HA?PROLIFIC_PID=';
     
     let doc1Downloaded = false;
