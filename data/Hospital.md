@@ -9,7 +9,6 @@ This document defines the high-level access control requirements for a hospital 
 ### Healthcare Personnel (HCP)
 * Licensed Health Care Professional (LHCP): Licensed health care professional that can view and update approved patient records. Restricted from modifying security credentials.
 * Designated Licensed Health Care Professional (DLHCP): Designed licensed health care professional that is similar to LHCP but with expanded patient permissions granted by the patient.
-* Emergency Responder (ER): Emergency responder that can access critical patient records in emergency situations but cannot modify them.
 * Unlicensed Authorized Personnel (UAP): Unlicesed authorized personnel that can an enter, edit, and view demographic and administrative records but not medical diagnoses.
 * Lab Technician (LT): Lab technician that can access and update laboratory test results.
 
@@ -27,7 +26,6 @@ This document defines the high-level access control requirements for a hospital 
 ### Patient Data Access
 * Patients and personal representatives can view full medical records.
 * DLHCPs and LHCPs can view approved medical records.
-* ER personnel can view emergency medical records for emergency treatment.
 * LTs can view test results.
 * Medical records cannot be viewed either by LTs or administrators, to protect patient confidentiality.
 
