@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const errorModal = document.getElementById('errorModal');
+    const closeModal = document.getElementById('closeModal');
+
     const section1 = document.getElementById('section1');
     const section2 = document.getElementById('section2');
     const section3 = document.getElementById('section3');
@@ -147,8 +150,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Partner registration button
     partnerBtn.addEventListener('click', function() {
-        window.open('http://agentv.naoinstitute.cloud.edu.au:8506/', '_blank');
+
+        errorModal.classList.remove('hidden');
+        const modalContent = errorModal.querySelector('.rounded-xl');
+        modalContent.classList.add('modal-animate-in');
+        modalContent.classList.remove('modal-animate-out');
         
+        // Disable scrolling when modal is open
+        document.body.style.overflow = 'hidden';
+
+
         // Simulate completion of step 2
         setTimeout(function() {
             progressFill.style.width = '50%';
@@ -161,6 +172,33 @@ document.addEventListener('DOMContentLoaded', function() {
         qaBtn.classList.add('bg-indigo-500', 'hover:bg-indigo-600');
         qaBtn.classList.remove('cursor-not-allowed')
         qaBtn.disabled = false;
+    });
+
+    closeModal.addEventListener('click', function() {
+        // Hide modal with animation
+        const modalContent = errorModal.querySelector('.rounded-xl');
+        modalContent.classList.remove('modal-animate-in');
+        modalContent.classList.add('modal-animate-out');
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            errorModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300);
+    });
+    
+    // Close modal when clicking outside
+    errorModal.addEventListener('click', function(e) {
+        if (e.target === errorModal) {
+            const modalContent = errorModal.querySelector('.rounded-xl');
+            modalContent.classList.remove('modal-animate-in');
+            modalContent.classList.add('modal-animate-out');
+            
+            setTimeout(() => {
+                errorModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
     });
 
     qaBtn.addEventListener('click', function() {
