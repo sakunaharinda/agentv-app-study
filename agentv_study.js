@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
 
     let prolific_pid = '';
-    let task_link = 'data/Task_Questionnaire.pdf';
-    let sus_link = 'data/SUS.pdf';
+    let task_link = 'https://drive.google.com/file/d/1ked3P_cpYd36n_9BBxGVAVPK0jItHPSi/view?usp=sharing';
+    let sus_link = 'https://drive.google.com/file/d/1AScstZLS945rijH21rSVkPp89B4gSRb-/view?usp=sharing';
     
     let doc1Downloaded = false;
     let doc2Downloaded = false;
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Generate the full URL with the Prolific ID as parameter
         prolific_pid = encodeURIComponent(prolificId);
-        task_link = task_link + prolific_pid;
-        sus_link = sus_link + prolific_pid;
+        // task_link = task_link + prolific_pid;
+        // sus_link = sus_link + prolific_pid;
         // Show and auto-hide success notification
         const notification = document.getElementById('successNotification');
         notification.classList.remove('hidden');
