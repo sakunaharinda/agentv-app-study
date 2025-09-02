@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
 
     let prolific_pid = '';
-    let task_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_2sF5L9WfDpSoeHA?PROLIFIC_PID=';
-    let sus_link = 'https://auckland.au1.qualtrics.com/jfe/form/SV_6ysasWcFoxTMeoK?PROLIFIC_PID=';
+    let task_link = 'data/Task_Questionnaire.pdf';
+    let sus_link = 'data/SUS.pdf';
     
     let doc1Downloaded = false;
     let doc2Downloaded = false;
