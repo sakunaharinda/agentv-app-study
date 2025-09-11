@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
 
     let prolific_pid = '';
-    let task_link = 'https://drive.google.com/file/d/1ked3P_cpYd36n_9BBxGVAVPK0jItHPSi/view?usp=sharing';
+    let task_link = 'https://drive.google.com/file/d/1U07Lolsso5T83qXAJNb1uZDuQUNVPIx_/view?usp=sharing';
     let sus_link = 'https://drive.google.com/file/d/1AScstZLS945rijH21rSVkPp89B4gSRb-/view?usp=sharing';
     
     let doc1Downloaded = false;
